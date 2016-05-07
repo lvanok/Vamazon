@@ -1,0 +1,23 @@
+{
+  "name": "vamazon",
+  "version": "1.0.0",
+  "description": "### Objectives",
+  "main": "VamazonCust.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvanok/Vamazon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvanok/Vamazon/issues"
+  },
+  "homepage": "https://github.com/lvanok/Vamazon#readme",
+  "dependencies": {
+    "mysql": "^2.10.2",
+    "prompt": "^1.0.0"
+  }
+}
