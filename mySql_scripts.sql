@@ -1,7 +1,14 @@
 CREATE DATABASE vamazon_db;
 USE vamazon_db;
 
-CREATE TABLE Products (ItemID int NOT NULL AUTO_INCREMENT, ProductName varchar(255), DepartmentName varchar(255), Price int, StockQuantity int, PRIMARY KEY (ItemID));
+CREATE TABLE Products 
+(
+	ItemID int NOT NULL AUTO_INCREMENT, 
+	ProductName varchar(255), 
+	DepartmentName varchar(255), 
+	Price int, StockQuantity int, 
+	PRIMARY KEY (ItemID)
+);
 
 INSERT INTO Products (ProductName, DepartmentName, Price, StockQuantity) VALUES ('Toothpaste', 'Health Care', 1.89, 100);
 INSERT INTO Products (ProductName, DepartmentName, Price, StockQuantity) VALUES ('Lucky Charms Cereal', 'Groceries', 4.20, 150);
@@ -18,6 +25,6 @@ CREATE TABLE Departments (DepartmentID int, DepartmentName varchar(255), OverHea
 
 INSERT INTO Departments (DepartmentID, DepartmentName, OverHeadCosts, TotalSales) VALUES ('0001', 'Health Care', 3, 243);
 INSERT INTO Departments (DepartmentID, DepartmentName, OverHeadCosts, TotalSales) VALUES ('0002', 'Seafood', 29, 994);
-INSERT INTO Departments (DepartmentID, DepartmentName, OverHeadCosts, TotalSales) VALUES ('0003', 'Groceries', 5, 1011);
+INSERT INTO Departments (DepartmentID, DepartmentName, OverHeadCosts, TotalSales) VALUES ('0003', 'Groceries', 55, 1011);
 
 SELECT * FROM Products INNER JOIN Departments ON Products.DepartmentName=Departments.DepartmentName;

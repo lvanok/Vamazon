@@ -15,7 +15,7 @@ connection.connect(function(err) {
   }
 });
 
-connection.query("SELECT * FROM Vamazon.Products", function(err, rows, fields) {
+connection.query("SELECT * FROM Products", function(err, rows, fields) {
 	if (err) throw err;
 	console.log("\n");
 	console.log("Welcome to Vamazon!");
@@ -31,7 +31,7 @@ connection.query("SELECT * FROM Vamazon.Products", function(err, rows, fields) {
 					console.log("\n");
 					console.log("Thank You for purchasing " + result.StockQuantity + " packages of " + rows[j].ProductName);
 					console.log("Total cost of your purchase: " + "$" + (totalSales));
-					connection.query("UPDATE Vamazon.Products,Vamazon.Departments SET StockQuantity = ?, TotalSales = ? Where ItemID = ?", [(rows[j].StockQuantity - result.StockQuantity),totalSales, result.ItemID], function (err, result) {
+					connection.query("UPDATE Products, Departments SET StockQuantity = ?, TotalSales = ? Where ItemID = ?", [(rows[j].StockQuantity - result.StockQuantity),totalSales, result.ItemID], function (err, result) {
 					    if (err) throw err;
 					    connection.end();
 					  });					    
